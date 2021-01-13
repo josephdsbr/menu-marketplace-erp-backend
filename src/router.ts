@@ -1,10 +1,10 @@
 import { Router, Request, Response } from 'express'
+import { createProductController } from './useCases/CreateProduct'
 
 const router = Router()
 
-router.get('/', (request: Request, response: Response) => {
-  const t = 1
-  return response.json('Hello World')
+router.post('/products', (request: Request, response: Response) => {
+  return createProductController.handle(request, response)
 })
 
 export { router }

@@ -2,20 +2,24 @@ import Product from '../../entity/Product'
 import { IProductRepository } from '../IProductRepository'
 import { getRepository } from 'typeorm'
 
-export class MySqlProductRepository implements IProductRepository {
-  repository = getRepository(Product)
+class MySqlProductRepository implements IProductRepository {
+  async findByName(name: string): Promise<Product> {
+    return await getRepository(Product).findOne({ name })
+  }
 
   async findAll(): Promise<Product[]> {
-    return await this.repository.find()
+    return await getRepository(Product).find()
   }
   async findByID(id: number): Promise<Product> {
-    return await this.repository.findOne(id)
+    return await getRepository(Product).findOne(id)
   }
   async save(product: Product): Promise<void> {
     try {
-      await this.repository.save(product)
+      await getRepository(Product).save(product)
     } catch (e) {
       console.error(e)
     }
   }
 }
+
+export default MySqlProductRepository

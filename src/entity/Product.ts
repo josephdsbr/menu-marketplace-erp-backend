@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { Column, Entity } from 'typeorm'
 import { BaseEntity } from './BaseEntity'
 
 @Entity()
@@ -9,6 +9,25 @@ export class Product extends BaseEntity<Product> {
   imgUrl: string
   @Column({ nullable: false })
   price: number
+
+  constructor() {
+    super()
+  }
+
+  setName = (name: string) => {
+    this.name = name
+    return this
+  }
+
+  setImgUrl = (imgUrl: string) => {
+    this.imgUrl = imgUrl
+    return this
+  }
+
+  setPrice = (price: number) => {
+    this.price = price
+    return this
+  }
 }
 
 export default Product

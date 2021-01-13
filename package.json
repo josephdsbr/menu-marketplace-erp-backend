@@ -9,10 +9,11 @@
       "build": "rimraf ./dist && tsc",
       "dev": "ts-node-dev --respawn --transpile-only --inspect -- ./src/server.ts",
       "lint": "eslint --fix --ext .js,.ts,.json .",
-      "test": "jest"
+      "test": "jest --watchAll --runInBand --verbose"
    },
    "dependencies": {
       "body-parser": "^1.18.1",
+      "class-validator": "^0.13.0",
       "cors": "^2.8.5",
       "dotenv": "^8.2.0",
       "express": "^4.17.1",
@@ -39,7 +40,6 @@
       "prettier": "^2.2.1",
       "supertest": "^6.0.1",
       "ts-jest": "^26.4.4",
-      "ts-node": "3.3.0",
       "ts-node-dev": "^1.1.1",
       "typescript": "^4.1.3"
    }
