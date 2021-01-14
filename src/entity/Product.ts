@@ -14,17 +14,17 @@ export class Product extends BaseEntity<Product> {
     super()
   }
 
-  setName = (name: string) => {
+  setName = (name: string): this => {
     this.name = name
     return this
   }
 
-  setImgUrl = (imgUrl: string) => {
+  setImgUrl = (imgUrl: string): this => {
     this.imgUrl = imgUrl
     return this
   }
 
-  setPrice = (price: number) => {
+  setPrice = (price: number): this => {
     this.price = price
     return this
   }

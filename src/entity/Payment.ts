@@ -1,7 +1,6 @@
 import { Column, Entity, OneToMany } from 'typeorm'
 import { BaseEntity } from './BaseEntity'
 import { Order } from './Order'
-import Product from './Product'
 
 @Entity()
 export class Payment extends BaseEntity<Payment> {
@@ -12,9 +11,11 @@ export class Payment extends BaseEntity<Payment> {
   @OneToMany(() => Order, (order) => order.payments)
   order: Order
 
-  constructor() {
+  constructor(amount: number, order: Order) {
     super()
+    this.amount = amount
+    this.order = order
   }
 }
 
-export default Product
+export default Payment

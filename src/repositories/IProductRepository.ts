@@ -6,3 +6,5 @@ export interface IProductRepository {
   findByID(id: number): Promise<Product>
   save(product: Product): Promise<void>
 }
+
+export default IProductRepository

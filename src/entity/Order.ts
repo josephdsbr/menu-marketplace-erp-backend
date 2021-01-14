@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, OneToMany } from 'typeorm'
 import { BaseEntity } from './BaseEntity'
+import { OrderDetails } from './OrderDetails'
 import { Payment } from './Payment'
-import Product from './Product'
 
 @Entity()
 export class Order extends BaseEntity<Order> {
@@ -11,10 +11,12 @@ export class Order extends BaseEntity<Order> {
   orderDate: Date
   @OneToMany(() => Payment, (payment) => payment.order)
   payments: Payment[]
+  @OneToMany(() => OrderDetails, (orderDetails) => orderDetails.order)
+  ordersDetails: OrderDetails[]
 
   constructor() {
     super()
   }
 }
 
-export default Product
+export default Order

@@ -20,22 +20,22 @@ class ProductDTO {
     return this.price
   }
 
-  public setName = (name: string) => {
+  public setName = (name: string): this => {
     this.name = name
     return this
   }
 
-  public setImgUrl = (imgUrl: string) => {
+  public setImgUrl = (imgUrl: string): this => {
     this.imgUrl = imgUrl
     return this
   }
 
-  public setPrice = (price: number) => {
+  public setPrice = (price: number): this => {
     this.price = price
     return this
   }
 
-  public build = () => this
+  public build = (): this => this
 }
 
 export default ProductDTO

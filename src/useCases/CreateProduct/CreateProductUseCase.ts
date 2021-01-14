@@ -6,7 +6,7 @@ import CreateProductDTO from '../../entity/dtos/ProductDTO'
 class CreateUserUseCase {
   constructor(private productRepository: IProductRepository) {}
 
-  async execute(data: CreateProductDTO) {
+  async execute(data: CreateProductDTO): Promise<void> {
     const productAlreadyExists = await this.productRepository.findByName(
       data.getName
     )

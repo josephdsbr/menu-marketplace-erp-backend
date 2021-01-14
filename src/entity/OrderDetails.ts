@@ -19,4 +19,4 @@ export class OrderDetails extends BaseEntity<OrderDetails> {
   }
 }
 
-export default Product
+export default OrderDetails
