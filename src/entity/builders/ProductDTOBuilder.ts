@@ -1,16 +1,16 @@
-import CreateProductDTO from '../../useCases/CreateProduct/CreateProductDTO'
+import ProductDTO from '../dtos/ProductDTO'
 import Product from '../Product'
 
-class CreateProductDTOBuilder {
+class ProductDTOBuilder {
   static fromEntity = (entity: Product) => {
-    return new CreateProductDTO()
+    return new ProductDTO()
       .setImgUrl(entity.imgUrl)
       .setName(entity.name)
       .setPrice(entity.price)
       .build()
   }
 
-  static toEntity = (dto: CreateProductDTO) => {
+  static toEntity = (dto: ProductDTO) => {
     return new Product()
       .setImgUrl(dto.getImgUrl)
       .setName(dto.getName)
@@ -18,4 +18,4 @@ class CreateProductDTOBuilder {
   }
 }
 
-export default CreateProductDTOBuilder
+export default ProductDTOBuilder
