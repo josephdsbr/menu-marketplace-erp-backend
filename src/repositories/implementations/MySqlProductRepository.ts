@@ -1,7 +1,9 @@
 import Product from '../../entity/Product'
 import { IProductRepository } from '../IProductRepository'
 import { getRepository } from 'typeorm'
+import { injectable } from 'inversify'
 
+@injectable()
 class MySqlProductRepository implements IProductRepository {
   async findByName(name: string): Promise<Product> {
     return await getRepository(Product).findOne({ name })

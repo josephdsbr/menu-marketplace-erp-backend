@@ -1,8 +1,14 @@
 import { Request, Response } from 'express'
 import GetAllProductsUseCase from './GetAllProductsUseCase'
+import { inject, injectable } from 'inversify'
+import { TYPES } from '../../models/types'
 
+@injectable()
 class GetAllProductsController {
-  constructor(private getAllProductsUseCase: GetAllProductsUseCase) {}
+  constructor(
+    @inject(TYPES.GetAllProductsUseCase)
+    private getAllProductsUseCase: GetAllProductsUseCase
+  ) {}
 
   async handle(_: Request, response: Response): Promise<Response> {
     try {

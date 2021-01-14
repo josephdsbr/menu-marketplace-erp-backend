@@ -13,6 +13,7 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "skipLibCheck": true,
+    "types": ["reflect-metadata"],
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
   "include": [
