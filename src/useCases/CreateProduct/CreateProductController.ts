@@ -1,5 +1,4 @@
 import { Request, Response } from 'express'
-import CreateProductDTO from './CreateProductDTO'
 import CreateProductUseCase from './CreateProductUseCase'
 
 class CreateProductController {

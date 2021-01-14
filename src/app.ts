@@ -5,7 +5,7 @@ import cors from 'cors'
 import { createConnection } from 'typeorm'
 const app = express()
 
-createConnection().then((connection) => {
+createConnection().then(() => {
   console.log('Database connected')
   app.use(express.json())
   app.use(express.urlencoded({ extended: false }))
